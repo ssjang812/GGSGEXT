@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class MoveObjWithGyro : MonoBehaviour
 {
-    public float positionGain;
-    public float rotationGain;
-    private bool isPointerDown = false;
+    //IN THIS PROJECT, THIS FUCTION IS INTEGRATED IN 'GazeInteraction.cs'
 
-    void Start()
-    {
-        RPC_PhonetoGlasses.event_pointerDown.AddListener(SetPointerDownTrue);
-        RPC_PhonetoGlasses.event_pointerUp.AddListener(SetPointerDownTrueFalse);
-    }
+    //public float positionGain;
+    //public float rotationGain;
+    //private bool isPointerDown = false;
+
+    //void Start()
+    //{
+    //    RPC_PhonetoGlasses.event_pointerDown.AddListener(SetPointerDownTrue);
+    //    RPC_PhonetoGlasses.event_pointerUp.AddListener(SetPointerDownTrueFalse);
+    //}
 
     //private void Update()
     //{
@@ -32,23 +34,23 @@ public class MoveObjWithGyro : MonoBehaviour
     //    }
     //}
 
-    private void MoveWithGyro()
-    {
-        transform.Translate(DeviceState.gyroDelta * positionGain);      
-    }
+    //private void MoveWithGyro()
+    //{
+    //    transform.Translate(DeviceState.gyroDelta * positionGain);      
+    //}
 
-    private void RotateWithGyro()
-    {
-        transform.Rotate(new Vector3(0, DeviceState.gyroDelta.x, 0) * rotationGain);
-    }
+    //private void RotateWithGyro()
+    //{
+    //    transform.Rotate(new Vector3(0, DeviceState.gyroDelta.x, 0) * rotationGain);
+    //}
 
-    private void SetPointerDownTrue()
-    {
-        isPointerDown = true;
-    }
+    //private void SetPointerDownTrue()
+    //{
+    //    isPointerDown = true;
+    //}
 
-    private void SetPointerDownTrueFalse()
-    {
-        isPointerDown = false;
-    }
+    //private void SetPointerDownTrueFalse()
+    //{
+    //    isPointerDown = false;
+    //}
 }
