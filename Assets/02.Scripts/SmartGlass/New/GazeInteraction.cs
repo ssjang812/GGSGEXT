@@ -142,7 +142,7 @@ public class GazeInteraction : MonoBehaviour
     private void GenerateWithGaze()
     {
         Debug.Log("GenerateWithGaze - " + DeviceState.furniture);
-        if (EyeTrackingProvider.HitInfo.transform != null)
+        if (gazeOnObject?.layer == LayerMask.NameToLayer("Spatial Awareness"))
         {
             switch (DeviceState.furniture)
             {
