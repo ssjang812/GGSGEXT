@@ -96,21 +96,25 @@ public class RPC_PhonetoGlasses : MonoBehaviour
         {
             case "ChairBtn":
                 DeviceState.furniture = Furniture.Chair;
+                Debug.Log("RPC_ButtonUp_Chair");
                 break;
             case "TableBtn":
                 DeviceState.furniture = Furniture.Table;
+                Debug.Log("RPC_ButtonUp_Table");
                 break;
             case "SmallSofaBtn":
                 DeviceState.furniture = Furniture.SmallSofa;
+                Debug.Log("RPC_ButtonUp_SmallSofa");
                 break;
             case "BigSofaBtn":
                 DeviceState.furniture = Furniture.BigSofa;
+                Debug.Log("RPC_ButtonUp_BitSofa");
                 break;
             default:
                 break;
         }
         event_buttonUp.Invoke();
-        //Debug.Log("RPC_ChairButtonUp!");
+        //Debug.Log("RPC_ButtonUp!");
     }
 
 
@@ -118,7 +122,7 @@ public class RPC_PhonetoGlasses : MonoBehaviour
     void RPC_PointerDown()
     {
         event_pointerDown.Invoke();
-        Debug.Log("RPC_PointerDown!");
+        //Debug.Log("RPC_PointerDown!");
     }
 
     [PunRPC]
@@ -134,7 +138,7 @@ public class RPC_PhonetoGlasses : MonoBehaviour
     {
         DeviceState.phoneControlMode = PhoneControlMode.PhoneSwipe;
         event_onPhoneSwipeClick.Invoke();
-        //Debug.Log("RPC_OnPhoneSwipeClick!");
+        Debug.Log("RPC_OnPhoneSwipeClick!");
     }
 
     [PunRPC]
@@ -142,7 +146,7 @@ public class RPC_PhonetoGlasses : MonoBehaviour
     {
         DeviceState.phoneControlMode = PhoneControlMode.PhoneGyro;
         event_onPhoneGyroClick.Invoke();
-        //Debug.Log("RPC_OnPhoneGyroClick!");
+        Debug.Log("RPC_OnPhoneGyroClick!");
     }
 
     [PunRPC]
@@ -150,6 +154,6 @@ public class RPC_PhonetoGlasses : MonoBehaviour
     {
         DeviceState.phoneControlMode = PhoneControlMode.GlassesGyro;
         event_onGlassesGyroClick.Invoke();
-        //Debug.Log("RPC_OnGlassesGyroClick!");
+        Debug.Log("RPC_OnGlassesGyroClick!");
     }
 }

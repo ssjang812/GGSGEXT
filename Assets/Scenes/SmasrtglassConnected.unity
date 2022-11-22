@@ -307,12 +307,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129943061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.85, y: 0, z: 15}
+  m_LocalPosition: {x: 14.85, y: 1.79, z: 6.56}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 1597979130}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &169433854
 GameObject:
@@ -1685,14 +1685,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612189950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: 0, z: 15}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.41, y: -2.21, z: 6.56}
+  m_LocalScale: {x: 10, y: 10, z: 0.01}
   m_Children:
   - {fileID: 795119124}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &640968874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1704,7 @@ GameObject:
   - component: {fileID: 640968875}
   - component: {fileID: 640968877}
   - component: {fileID: 640968876}
-  m_Layer: 29
+  m_Layer: 0
   m_Name: Text
   m_TagString: IntSpace_Phone
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &650922578
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1960,7 +1960,7 @@ Transform:
   m_Children:
   - {fileID: 1711802110}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748196097
 GameObject:
@@ -2385,7 +2385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852693679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.28, y: -1.24, z: 12.82}
+  m_LocalPosition: {x: 0, y: -1.24, z: 4}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3109,7 +3109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1460487229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,7 +3135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1597979129
 GameObject:
@@ -3733,7 +3733,7 @@ GameObject:
   - component: {fileID: 1889768875}
   - component: {fileID: 1889768874}
   - component: {fileID: 1889768873}
-  m_Layer: 29
+  m_Layer: 0
   m_Name: TestCube
   m_TagString: IntSpace_Phone
   m_Icon: {fileID: 0}
@@ -3809,14 +3809,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889768872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.67, y: 0, z: 15}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -9.81, y: -2.21, z: 6.56}
+  m_LocalScale: {x: 10, y: 10, z: 0.01}
   m_Children:
   - {fileID: 640968875}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1973939962
 GameObject:
   m_ObjectHideFlags: 0
