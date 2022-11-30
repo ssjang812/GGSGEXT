@@ -11,6 +11,8 @@ public class GazeInteraction : MonoBehaviour
     public GameObject tablePrefab;
     public GameObject smallSofaPrefab;
     public GameObject bigSofaPrefab;
+    public GameObject contextPlaneWalk;
+    public GameObject contextPlanePhone;
 
     public float gyroPositionGain;
     public float swipePositionGain;
@@ -36,7 +38,10 @@ public class GazeInteraction : MonoBehaviour
     private RaycastHit hitData;
 
     private GameObject newObject;
-    private float scale = 1.0f;
+    private float scale = 0.4f;
+
+    private bool contextWalkFlag;
+    private bool contextPhoneFlag;
 
     public GameObject GazeOnObject
     {
@@ -53,8 +58,11 @@ public class GazeInteraction : MonoBehaviour
     // start is called before the first frame update
     void Start()
     {
+        contextWalkFlag = true;
+        contextPhoneFlag = true;
         gazeOnObject = null;
         manipObject = null;
+        RPC_PhonetoGlasses.event_buttonUp.AddListener(ContextPlateOnOff);
         RPC_PhonetoGlasses.event_buttonUp.AddListener(GenerateWithGaze);
         RPC_PhonetoGlasses.event_pointerDown.AddListener(IsMoveCheck);
         RPC_PhonetoGlasses.event_pointerUp.AddListener(IsMoveFalse);
@@ -68,7 +76,7 @@ public class GazeInteraction : MonoBehaviour
         gazeOnObject = EyeTrackingProvider.HitInfo.transform?.gameObject;
 
         Debug.Log("gazeOnObject : " + gazeOnObject?.name);
-        //Debug.Log("manipObject : " + manipObject);
+        Debug.Log("manipObject : " + manipObject);
 
         FireInteractionSpaceRay();
 
@@ -138,36 +146,96 @@ public class GazeInteraction : MonoBehaviour
         }
     }
     
+    private void ContextPlateOnOff()
+    {
+        switch (DeviceState.furniture)
+        {
+            case Furniture.Chair:
+                if(contextWalkFlag == true)
+                {
+                    contextPlaneWalk.SetActive(false);
+                    contextWalkFlag = false;
+                }
+                else
+                {
+                    contextPlaneWalk.SetActive(true);
+                    contextWalkFlag = true;
+                }
+                break;
+            case Furniture.Table:
+                if (contextPhoneFlag == true)
+                {
+                    contextPlanePhone.SetActive(false);
+                    contextPhoneFlag = false;
+                }
+                else
+                {
+                    contextPlanePhone.SetActive(true);
+                    contextPhoneFlag = true;
+                }
+                break;
+            case Furniture.SmallSofa:
+                if (contextWalkFlag == true)
+                {
+                    contextPlaneWalk.SetActive(false);
+                    contextWalkFlag = false;
+                }
+                else
+                {
+                    contextPlaneWalk.SetActive(true);
+                    contextWalkFlag = true;
+                }
+                break;
+            case Furniture.BigSofa:
+                if (contextPhoneFlag == true)
+                {
+                    contextPlanePhone.SetActive(false);
+                    contextPhoneFlag = false;
+                }
+                else
+                {
+                    contextPlanePhone.SetActive(true);
+                    contextPhoneFlag = true;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
 
     private void GenerateWithGaze()
     {
         Debug.Log("GenerateWithGaze - " + DeviceState.furniture);
         if (gazeOnObject?.layer == LayerMask.NameToLayer("Spatial Awareness"))
         {
-            switch (DeviceState.furniture)
+            if(manipObject == null)
             {
-                case Furniture.Chair:
-                    Debug.Log("gen chair");
-                    newObject = Instantiate(chairPrefab, EyeTrackingProvider.HitPosition + new Vector3(0, chairPrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
-                    newObject.transform.localScale = new Vector3(scale, scale, scale);
-                    break;
-                case Furniture.Table:
-                    Debug.Log("gen table");
-                    newObject = Instantiate(tablePrefab, EyeTrackingProvider.HitPosition + new Vector3(0, tablePrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
-                    newObject.transform.localScale = new Vector3(scale, scale, scale);
-                    break;
-                case Furniture.SmallSofa:
-                    Debug.Log("gen small sofa");
-                    newObject = Instantiate(smallSofaPrefab, EyeTrackingProvider.HitPosition + new Vector3(0, smallSofaPrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
-                    newObject.transform.localScale = new Vector3(scale, scale, scale);
-                    break;
-                case Furniture.BigSofa:
-                    Debug.Log("gen small bigsofa");
-                    newObject = Instantiate(bigSofaPrefab, EyeTrackingProvider.HitPosition + new Vector3(0, bigSofaPrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
-                    newObject.transform.localScale = new Vector3(scale, scale, scale);
-                    break;
-                default:
-                    break;
+                switch (DeviceState.furniture)
+                {
+                    case Furniture.Chair:
+                        Debug.Log("gen chair");
+                        newObject = Instantiate(chairPrefab, EyeTrackingProvider.HitPosition + new Vector3(0, chairPrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+                        newObject.transform.localScale = new Vector3(scale, scale, scale);
+                        break;
+                    case Furniture.Table:
+                        Debug.Log("gen table");
+                        newObject = Instantiate(tablePrefab, EyeTrackingProvider.HitPosition + new Vector3(0, tablePrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+                        newObject.transform.localScale = new Vector3(scale, scale, scale);
+                        break;
+                    case Furniture.SmallSofa:
+                        Debug.Log("gen small sofa");
+                        newObject = Instantiate(smallSofaPrefab, EyeTrackingProvider.HitPosition + new Vector3(0, smallSofaPrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+                        newObject.transform.localScale = new Vector3(scale, scale, scale);
+                        break;
+                    case Furniture.BigSofa:
+                        Debug.Log("gen small bigsofa");
+                        newObject = Instantiate(bigSofaPrefab, EyeTrackingProvider.HitPosition + new Vector3(0, bigSofaPrefab.transform.localScale.y / 3, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+                        newObject.transform.localScale = new Vector3(scale, scale, scale);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         else
