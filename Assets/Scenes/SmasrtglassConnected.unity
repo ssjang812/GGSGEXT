@@ -7862,7 +7862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888866769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24297452, y: 0.051543016, z: 0.23202251}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1608731216}
@@ -14404,15 +14404,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5683277542844690698, guid: 98f86f623b57c404cab81ee697c349f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4429745
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5683277542844690698, guid: 98f86f623b57c404cab81ee697c349f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.048456986
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5683277542844690698, guid: 98f86f623b57c404cab81ee697c349f7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.26797748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5683277542844690698, guid: 98f86f623b57c404cab81ee697c349f7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14473,9 +14473,9 @@ MonoBehaviour:
   faceUserDefinedTargetTransform: 0
   targetToFace: {fileID: 0}
   pivotAxis: 7
-  minDistance: 0.45
+  minDistance: 0.5
   maxDistance: 0.5
-  defaultDistance: 0.55
+  defaultDistance: 0.5
   maxViewHorizontalDegrees: 8
   maxViewVerticalDegrees: 5
   reorientWhenOutsideParameters: 1
@@ -14509,7 +14509,7 @@ MonoBehaviour:
   trackedHandedness: 3
   trackedHandJoint: 2
   transformOverride: {fileID: 0}
-  additionalOffset: {x: -0.2, y: 0.1, z: 0}
+  additionalOffset: {x: -0.05, y: 0.05, z: 0}
   additionalRotation: {x: 0, y: 0, z: 0}
   updateSolvers: 1
 --- !u!1 &1622216224
@@ -19287,15 +19287,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8802422384436260751, guid: 7e6c2f4834b9ff240b75cba340c64641, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4429745
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802422384436260751, guid: 7e6c2f4834b9ff240b75cba340c64641, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.048456986
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802422384436260751, guid: 7e6c2f4834b9ff240b75cba340c64641, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.26797748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802422384436260751, guid: 7e6c2f4834b9ff240b75cba340c64641, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19356,9 +19356,9 @@ MonoBehaviour:
   faceUserDefinedTargetTransform: 0
   targetToFace: {fileID: 0}
   pivotAxis: 7
-  minDistance: 0.45
+  minDistance: 0.5
   maxDistance: 0.5
-  defaultDistance: 0.55
+  defaultDistance: 0.5
   maxViewHorizontalDegrees: 8
   maxViewVerticalDegrees: 5
   reorientWhenOutsideParameters: 1
@@ -19392,7 +19392,7 @@ MonoBehaviour:
   trackedHandedness: 3
   trackedHandJoint: 2
   transformOverride: {fileID: 0}
-  additionalOffset: {x: -0.2, y: 0.1, z: 0}
+  additionalOffset: {x: -0.05, y: 0.05, z: 0}
   additionalRotation: {x: 0, y: 0, z: 0}
   updateSolvers: 1
 --- !u!1 &2036612474
